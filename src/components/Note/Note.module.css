@@ -1,0 +1,51 @@
+.noteWrapper{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    max-width: 382px;
+    padding: 160px 50px 260px;
+    margin: 0px 20px 0px 0px;
+    min-width: 382px;
+}
+.noteContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.noteTitle{
+    font-size: 40px;
+    line-height: 47px;
+    margin: 0px 0px 30px;
+}
+.noteTasks{
+    margin: 0px 0px 40px;
+}
+.noteTask{
+    display: flex;
+}
+.noteTask:not(:last-child){
+    margin: 0px 0px 25px;
+}
+.noteImage{
+    margin: 0px 40px 0px 0px;
+}
+.noteText{
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+}
+.noteComment{
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    max-width: 267px;
+    margin: 0px 0px 2px;
+}
+.noteButton{
+    border-bottom: 1px solid #2d2d2d;
+    background-color: transparent;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    position: relative;
+}

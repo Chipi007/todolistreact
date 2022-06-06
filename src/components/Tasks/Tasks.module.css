@@ -1,0 +1,89 @@
+.tasksWrapper{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 75px 80px 35px;
+    min-height: 613px;
+}
+.tasksContaier{
+    display: flex;
+    flex-direction: column;
+}
+.taskContainer{
+    display: flex;
+    margin: 0px 0px 40px;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 47px;
+}
+.taskText{
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 122.15%;
+    word-break:break-all;
+    transition: all 0.2s ease 0s;
+}
+.taskNotice{
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 122.15%;
+    text-align: center;
+}
+.taskTextCompleted{
+    color: #ABABAB;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 122.15%;
+    word-break:break-all;
+    transition: all 0.2s ease 0s;
+}
+.taskImage{
+    margin: 10px 22px 0px 0px;
+    transition: all 0.2s ease 0s;
+}
+.taskImageCompleted{
+    margin: 10px 22px 0px 0px;
+    filter: grayscale(1);
+    transition: all 0.2s ease 0s;
+    position: relative;
+    z-index: 0}
+
+.taskCheckbox{
+    margin: 0px 40px 0px 0px;
+}
+.taskButtons{
+    margin-left: auto;
+    display: flex;
+}
+.btnTask{
+    border: 1.5px solid #707070;
+    border-radius: 5px;
+    background-color: transparent;
+    max-width: 50px;
+    max-height: 50px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btnChange{
+    margin: 0px 20px 0px 20px;
+}
+.svgBox{
+    width: 50px;
+	flex-shrink: 0;
+	height: 50px;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	cursor: pointer;
+    border: 2px #F2C67A solid;
+}
+svg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
