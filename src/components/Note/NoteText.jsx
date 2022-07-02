@@ -1,6 +1,6 @@
 import React from 'react'
 
-import s from './Note.module.css';
+import s from './Note.module.scss';
 
 const NoteText = (props) => {
   return (

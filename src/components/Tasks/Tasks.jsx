@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 
-import s from './Tasks.module.css';
+import s from './Tasks.module.scss';
 import TasksItem from './TasksItem';
 
 const Tasks = () =>{

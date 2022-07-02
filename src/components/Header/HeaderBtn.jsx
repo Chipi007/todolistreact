@@ -1,8 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 
-import s from './Header.module.css';
-
+import s from './Header.module.scss';
 import Plus from "../../images/Plus.svg";
 
 const HeaderBtn = ({handleClick}) => {

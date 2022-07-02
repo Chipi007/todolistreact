@@ -1,6 +1,6 @@
 import React from 'react'
 
-import s from './Tasks.module.css';
+import s from './Tasks.module.scss';
 import Cross from "../../images/Cross.svg";
 import { useDispatch } from 'react-redux';
 import { deleteTodo } from '../../redux/slices/todoSlice';

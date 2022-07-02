@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import React from 'react'
-import s from './Tasks.module.css';
+import s from './Tasks.module.scss';
 import {boxVariants, checkVariants } from '../../constants';
 
 const CheckButton = ({checked, handleCheck}) => {

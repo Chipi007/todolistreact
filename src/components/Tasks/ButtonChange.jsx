@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion';
 
-import s from './Tasks.module.css';
+import s from './Tasks.module.scss';
 import Pen from "../../images/Pen.svg";
 import { shakeBtn, shakeImg } from '../../constants';
 

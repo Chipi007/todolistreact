@@ -1,6 +1,6 @@
 import React from 'react'
 
-import s from './Header.module.css';
+import s from './Header.module.scss';
 import { months, weekdays } from '../../constants';
 
 const HeaderDay = () => {

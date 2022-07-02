@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import s from './Tasks.module.css';
+import s from './Tasks.module.scss';
 
 import Briefcase from "../../images/Briefcase.svg";
 import Lotos from "../../images/PersonLotos.svg";

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import s from './Note.module.css';
+import s from './Note.module.scss';
 
 import NoteImage from './NoteImage';
 import NoteText from './NoteText';

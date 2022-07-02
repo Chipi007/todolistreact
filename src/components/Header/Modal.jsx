@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { addTodo, updateTodo } from '../../redux/slices/todoSlice';
 import {v4 as uuid} from 'uuid';
 
-import s from './Header.module.css';
+import s from './Header.module.scss';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const modalWrapperAnimation = {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import s from './Header.module.css';
+import s from './Header.module.scss';
 import HeaderBtn from './HeaderBtn';
 import HeaderDay from './HeaderDay';
 import Modal from './Modal';
