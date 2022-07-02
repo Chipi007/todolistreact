@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/todolistreact/static/css/main.997be1bc.css",
-    "main.js": "/todolistreact/static/js/main.802cf482.js",
+    "main.css": "/todolistreact/static/css/main.74cac50d.css",
+    "main.js": "/todolistreact/static/js/main.ca019302.js",
     "static/media/WomanAndMan.svg": "/todolistreact/static/media/WomanAndMan.e26702f2d1ec34987e5e14f102daeee2.svg",
     "static/media/Briefcase.svg": "/todolistreact/static/media/Briefcase.ed037fd55b6b01fbfff23d5d7aa0aa7c.svg",
     "static/media/PersonLotos.svg": "/todolistreact/static/media/PersonLotos.97e6c95539c650c5e981df9a49b02bf4.svg",
@@ -9,11 +9,11 @@
     "static/media/Pen.svg": "/todolistreact/static/media/Pen.f8f84eaa0f44b0b0b73533b9fa7bff50.svg",
     "static/media/Plus.svg": "/todolistreact/static/media/Plus.dd9c55c778a8f68ca6f255389dab008c.svg",
     "static/media/Cross.svg": "/todolistreact/static/media/Cross.3b4c850593a04826bbf1ff861a5ef364.svg",
-    "main.997be1bc.css.map": "/todolistreact/static/css/main.997be1bc.css.map",
-    "main.802cf482.js.map": "/todolistreact/static/js/main.802cf482.js.map"
+    "main.74cac50d.css.map": "/todolistreact/static/css/main.74cac50d.css.map",
+    "main.ca019302.js.map": "/todolistreact/static/js/main.ca019302.js.map"
   },
   "entrypoints": [
-    "static/css/main.997be1bc.css",
-    "static/js/main.802cf482.js"
+    "static/css/main.74cac50d.css",
+    "static/js/main.ca019302.js"
   ]
 }
