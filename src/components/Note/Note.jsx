@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './Note.module.css';
+import s from './Note.module.css';
 
 import NoteTitle from './NoteTitle'
 import NoteTasks from './NoteTasks'
@@ -9,14 +9,14 @@ import NoteButton from './NoteButton';
 import { useSelector } from 'react-redux';
 
 
-function Note() {
+const Note = () => {
 
   const tasks = useSelector((state) => state.todo.tasks);
   const filteredTasks = tasks.filter(task => task.completed === false);
 
   return (
-    <div className={styles.noteWrapper}>
-        <div className={styles.noteContainer}>
+    <div className={s.noteWrapper}>
+        <div className={s.noteContainer}>
             <NoteTitle>Памятка</NoteTitle>
             <NoteTasks />
         </div>

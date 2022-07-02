@@ -1,10 +1,10 @@
 import React from 'react'
 
-import styles from './Note.module.css';
+import s from './Note.module.css';
 
-function NoteText(props) {
+const NoteText = (props) => {
   return (
-    <div className={styles.noteText}>
+    <div className={s.noteText}>
         {props.children}
     </div>
   )

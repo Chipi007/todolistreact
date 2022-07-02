@@ -2,9 +2,9 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { updateFilterStatus } from '../../redux/slices/todoSlice';
 
-import styles from './Note.module.css';
+import s from './Note.module.css';
 
-function NoteButton() {
+const NoteButton = () => {
   
   const filterStatus = useSelector((state) => state.todo.filterStatus)
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ function NoteButton() {
     }
   }
   return (
-      <button type = 'button' value = {filterStatus} className={styles.noteButton} onClick = {handleClick}>{filterStatus === 'all' ? 'Активные' : 'Все задачи'}
+      <button type = 'button' value = {filterStatus} className={s.noteButton} onClick = {handleClick}>{filterStatus === 'all' ? 'Активные' : 'Все задачи'}
       </button>
   )
 }

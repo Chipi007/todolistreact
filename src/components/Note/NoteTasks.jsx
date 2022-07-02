@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './Note.module.css';
+import s from './Note.module.css';
 
 import Briefcase from "../../images/Briefcase.svg";
 import Lotos from "../../images/PersonLotos.svg";
@@ -8,7 +8,7 @@ import People from "../../images/WomanAndMan.svg";
 
 import NoteTask from './NoteTask';
 
-function NoteTasks() {
+const NoteTasks = () => {
     const types = [
         {
             id: 1,
@@ -31,7 +31,7 @@ function NoteTasks() {
     ]
 
     return(
-        <div className={styles.noteTasks}>
+        <div className={s.noteTasks}>
             {types.map(type =><NoteTask key = {type.id} type={type}></NoteTask>)}
         </div>
     );

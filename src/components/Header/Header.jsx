@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 
-import styles from './Header.module.css';
+import s from './Header.module.css';
 import HeaderBtn from './HeaderBtn';
 import HeaderDay from './HeaderDay';
 import Modal from './Modal';
 
 
-function Header() {
+const Header = () => {
   const [modalActive, setModalActive] = useState(false);
 
   const openModal = () =>{
@@ -14,8 +14,8 @@ function Header() {
   }
 
   return (
-    <div className={styles.headerWrapper}>
-        <div className={styles.headerContainer}>
+    <div className={s.headerWrapper}>
+        <div className={s.headerContainer}>
             <HeaderDay />
             <HeaderBtn handleClick = {openModal}/>
         </div>

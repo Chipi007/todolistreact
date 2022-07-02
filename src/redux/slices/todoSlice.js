@@ -25,30 +25,23 @@ export const todoSlice = createSlice ({
             state.tasks.push(action.payload);
             //забираем все задачи, находящиеся в localStorage
             const tasks = window.localStorage.getItem('tasks');
-            if(tasks){
-                //делаем из всех существующих задач массив
-                const tasksArray = JSON.parse(tasks);
-                //добавляем новую задачу в массив
-                tasksArray.push({
-                    ...action.payload
-                });            
-                //отправляем массив задач в localStorage
-                window.localStorage.setItem('tasks', JSON.stringify(tasksArray))
-            }
-            else{
+            //делаем из всех существующих задач массив
+            const tasksArray = tasks ? JSON.parse(tasks) : [];
+            //добавляем новую задачу в массив
+            tasksArray.push({
+                ...action.payload
+            });            
+            //отправляем массив задач в localStorage
+            window.localStorage.setItem('tasks', JSON.stringify(tasksArray))
+            /*else{
                 //если же в localStorage ещё нет ни одной задачи
                 window.localStorage.setItem('tasks', JSON.stringify([{...action.payload}]));
-            }
+            }*/
         },
         deleteTodo: (state, action) => {
             const tasks = window.localStorage.getItem('tasks');
             if(tasks){
-                const tasksArray = JSON.parse(tasks);
-                tasksArray.forEach((todo, index) => {
-                    if(todo.id === action.payload){
-                        tasksArray.splice(index, 1)
-                    }
-                });
+                const tasksArray = JSON.parse(tasks).filter((todo, index) => todo.id !== action.payload);
                 window.localStorage.setItem('tasks', JSON.stringify(tasksArray));
                 state.tasks = tasksArray;
             }
@@ -56,14 +49,8 @@ export const todoSlice = createSlice ({
         updateTodo: (state, action) => {
             const tasks = window.localStorage.getItem('tasks');
             if(tasks){
-                const tasksArray = JSON.parse(tasks);
-                tasksArray.forEach((todo, index) => {
-                    if(todo.id === action.payload.id){
-                        todo.description = action.payload.description;
-                        todo.taskType = action.payload.taskType;
-                        todo.completed = action.payload.completed;
-                    }
-                });
+                const {description, taskType, completed} = action.payload;
+                const tasksArray = JSON.parse(tasks).map((todo, index) => todo.id === action.payload.id ? {...todo, description, taskType, completed} : todo)
                 window.localStorage.setItem('tasks', JSON.stringify(tasksArray));
                 state.tasks = tasksArray;
             }

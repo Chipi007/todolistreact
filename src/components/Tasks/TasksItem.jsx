@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import styles from './Tasks.module.css';
+import s from './Tasks.module.css';
 
 import Briefcase from "../../images/Briefcase.svg";
 import Lotos from "../../images/PersonLotos.svg";
@@ -12,7 +12,7 @@ import CheckButton from './CheckButton';
 import { useDispatch } from 'react-redux';
 import { updateTodo} from '../../redux/slices/todoSlice';
 
-function TasksItem({todo}) {
+const TasksItem = ({todo}) => {
     const dispatch = useDispatch();
 
     const [updateModalOpen, setUpdateModalOpen] = useState(false);
@@ -23,12 +23,7 @@ function TasksItem({todo}) {
     }
 
     useEffect(() => {
-      if(todo.completed === true){
-        setChecked(true);
-      }
-      else{
-        setChecked(false);
-      }
+      setChecked(todo.completed);
     }, [todo.completed]);
 
     const WORKING_TASKS = 'work';
@@ -46,20 +41,20 @@ function TasksItem({todo}) {
 
     const handleCheck = () => {
       setChecked(!checked);
-      dispatch(updateTodo({...todo, completed: checked ? false : true}));
+      dispatch(updateTodo({...todo, completed: !checked}));
     }
 
   return (
     <div>
-      <div className={styles.taskContainer}>
-          <div className={styles.taskCheckbox}>
+      <div className={s.taskContainer}>
+          <div className={s.taskCheckbox}>
               <CheckButton checked = {checked} handleCheck = {handleCheck}></CheckButton>
           </div>
-          <div className={todo.completed === false ? styles.taskImage : styles.taskImageCompleted}>
+          <div className={!todo.completed ? s.taskImage : s.taskImageCompleted}>
               {neededPhoto()}
           </div>
-          <div className={todo.completed === false ? styles.taskText : styles.taskTextCompleted}>{todo.description}</div>
-          <div className={styles.taskButtons}>
+          <div className={!todo.completed ? s.taskText : s.taskTextCompleted}>{todo.description}</div>
+          <div className={s.taskButtons}>
             <ButtonChange handleChange={handleChange}/>
             <ButtonDelete todo = {todo}/>
           </div>

@@ -1,10 +1,10 @@
 import React from 'react'
 
-import styles from './Note.module.css';
+import s from './Note.module.css';
 
-function NoteImage(props) {
+const NoteImage = (props) => {
   return (
-    <div className={styles.noteImage}>
+    <div className={s.noteImage}>
         <img src = {props.src} alt = {props.alt} />
     </div>
   )
