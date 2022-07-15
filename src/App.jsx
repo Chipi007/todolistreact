@@ -1,6 +1,6 @@
 import React from 'react'
 
-import s from './Page.module.css';
+import s from './Page.module.scss';
 
 import Note from "./components/Note/Note";
 import MainTitle from "./components/Title/Title";
