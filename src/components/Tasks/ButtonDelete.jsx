@@ -6,14 +6,16 @@ import { useDispatch } from 'react-redux';
 import { deleteTodo } from '../../redux/slices/todoSlice';
 import { motion } from 'framer-motion';
 import { shakeBtn, shakeImg } from '../../constants';
+import { useCallback } from 'react';
 
 
 const ButtonDelete = ({todo}) => {
     const dispatch = useDispatch();
 
-    const handleDelete = () => {
-        dispatch(deleteTodo(todo.id));
-    }  
+    const handleDelete = useCallback(() => { 
+        return dispatch(deleteTodo(todo.id));
+    }, [dispatch, todo.id]); //компилятор перестал выдавать предупреждения после такого массива зависимостей. Он правильный?
+
     return (
     <motion.button type='button' className={s.btnTask} onClick = {handleDelete} variants = {shakeBtn} whileHover='hover'>
         <motion.img src = {Cross} alt = 'delete btn' variants={shakeImg}/>

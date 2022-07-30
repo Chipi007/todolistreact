@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const getInitialTasks= () =>{
+const getInitialTasks = () =>{
     const localTasks = window.localStorage.getItem('tasks');
     if(localTasks){
         return JSON.parse(localTasks)

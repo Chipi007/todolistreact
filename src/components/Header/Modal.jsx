@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo, useCallback } from 'react'
 import { useDispatch } from 'react-redux';
 import { addTodo, updateTodo } from '../../redux/slices/todoSlice';
 import {v4 as uuid} from 'uuid';
@@ -26,14 +26,9 @@ const Modal = ({modalType, modalActive, setModalActive, todo}) => {
   const [taskType, setTaskType] = useState('work');
   const dispatch = useDispatch();
   useEffect(() => {
-    if(modalType === 'update' && todo){
-      setDescription(todo.description);
-      setTaskType(todo.taskType);
-    }
-    else{
-      setDescription('');
-      setTaskType('work');
-    }
+    const isTodo = modalType === 'update' && todo;
+    setDescription(isTodo ? todo.description : '');
+    setTaskType(isTodo ? todo.taskType : 'work');
   }, [modalType, todo, modalActive])
 
   const handleSubmit = (e) =>{
@@ -66,23 +61,32 @@ const Modal = ({modalType, modalActive, setModalActive, todo}) => {
         }
   };
 
+  const neededAction = useMemo(() => {
+    return modalType === 'update' ? 'Изменить' : 'Добавить'
+  }, [modalType])
+  
+  const neeededTaskType = useCallback((e) => {
+    return setTaskType(e.target.value)
+  }, [taskType]) //WARNING: React Hook useCallback has an unnecessary dependency: 'taskType'. Either exclude it or remove the dependency array. (???)
+
+
   return ( 
     <AnimatePresence>
       {modalActive && (
       <motion.div className={s.modalWrapper} onClick ={() => setModalActive(false)} variants = {modalWrapperAnimation} initial = 'hidden' animate = 'visible' exit = 'hidden'>
           <div className={s.modalContainer} onClick ={e => e.stopPropagation()}>
-            <div className={s.modalTitle}>{modalType === 'update' ? 'Изменить' : 'Добавить'} задачу</div>
+            <div className={s.modalTitle}>{neededAction} задачу</div>
             <form onSubmit = {(e) =>handleSubmit(e)}>
               <label htmlFor='description'>Описание</label>
               <input type="text" id='description' placeholder = "полить цветы" className={s.modalInput} value={description} onChange={(e) => setDescription(e.target.value)}/>
               <label htmlFor='type'>Тип</label>
-              <select name="type" id='type' className={s.modalInput} value={taskType} onChange={(e) => setTaskType(e.target.value)}>
+              <select name="type" id='type' className={s.modalInput} value={taskType} onChange={neeededTaskType}>
                 <option value='work'>рабочая задача</option>
                 <option value='family'>семейная задача</option>
                 <option value='relax'>досуг</option>
               </select>
                 <motion.button type='submit' className={s.saveBtn} whileHover = {{scale: 1.1}} whileTap = {{background: 'linear-gradient(90deg, rgba(193, 208, 248, 0.8) 13.45%, rgba(221, 148, 233, 0.672) 140.11%)'}}>
-                  {modalType === 'update' ? 'Изменить' : 'Добавить'}
+                  {neededAction}
                 </motion.button>
             </form>
           </div>
