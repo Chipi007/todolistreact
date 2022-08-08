@@ -14,7 +14,7 @@ const ButtonDelete = ({todo}) => {
 
     const handleDelete = useCallback(() => { 
         return dispatch(deleteTodo(todo.id));
-    }, [dispatch, todo.id]); //компилятор перестал выдавать предупреждения после такого массива зависимостей. Он правильный?
+    }, [dispatch, todo.id]);
 
     return (
     <motion.button type='button' className={s.btnTask} onClick = {handleDelete} variants = {shakeBtn} whileHover='hover'>

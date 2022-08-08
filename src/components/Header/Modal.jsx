@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo, useCallback } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import { useDispatch } from 'react-redux';
 import { addTodo, updateTodo } from '../../redux/slices/todoSlice';
 import {v4 as uuid} from 'uuid';
@@ -65,10 +65,9 @@ const Modal = ({modalType, modalActive, setModalActive, todo}) => {
     return modalType === 'update' ? 'Изменить' : 'Добавить'
   }, [modalType])
   
-  const neeededTaskType = useCallback((e) => {
-    return setTaskType(e.target.value)
-  }, [taskType]) //WARNING: React Hook useCallback has an unnecessary dependency: 'taskType'. Either exclude it or remove the dependency array. (???)
-
+  const neeededTaskType = (e) => {
+    setTaskType(e.target.value);
+  } 
 
   return ( 
     <AnimatePresence>

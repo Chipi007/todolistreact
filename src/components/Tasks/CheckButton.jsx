@@ -2,15 +2,15 @@ import { motion, useMotionValue, useTransform } from 'framer-motion';
 import React from 'react'
 import s from './Tasks.module.scss';
 import {boxVariants, checkVariants } from '../../constants';
-import { useCallback } from 'react';
 
 const CheckButton = ({checked, handleCheck}) => {
   const pathLength = useMotionValue(0);
   const opacity = useTransform(pathLength, [0.05, 0.15], [0, 1]);
 
-  const checkTask = useCallback(() => {
-    return handleCheck(handleCheck)
-  }, [handleCheck]) //и тут правильный массив зависимостей?
+  const checkTask = () => {
+    if (handleCheck) handleCheck();
+  }
+
   return (
     <motion.div className={s.svgBox} 
       variants = {boxVariants}
